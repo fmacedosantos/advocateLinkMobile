@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "608579686005",
+    "project_id": "advocatelink-bdd5e",
+    "storage_bucket": "advocatelink-bdd5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608579686005:android:bf2102d08693600fde323c",
+        "android_client_info": {
+          "package_name": "com.example.loginvsf"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWHPGaCDss-b2KzlQGc6gn8LHiK4sj4ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

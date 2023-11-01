@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Cadastro">
+
+    <EditText
+        android:id="@+id/usuarioCadastro"
+        android:layout_width="301dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="128dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:layout_editor_absoluteX="55dp" />
+
+    <EditText
+        android:id="@+id/emailCadastro"
+        android:layout_width="301dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <EditText
+        android:id="@+id/senhaCadastro"
+        android:layout_width="301dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="452dp" />
+
+    <EditText
+        android:id="@+id/confirmarSCadastro"
+        android:layout_width="301dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Confirmar senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="536dp" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="283dp"
+        android:layout_height="58dp"
+        android:backgroundTint="#34A853"
+        android:text="Cadastrar"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="646dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
