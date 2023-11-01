@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LoginVSF</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Início</string>
     <string name="menu_search">Pesquisa</string>
     <string name="menu_user">Perfil</string>
 
