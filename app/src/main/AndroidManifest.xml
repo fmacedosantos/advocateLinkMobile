@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LoginVSF"
+        android:theme="@style/Base.Theme.LoginVSF"
         tools:targetApi="31">
         <activity
             android:name=".Redirect"
@@ -29,6 +29,8 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".LoginAdvogado"/>
 
         <activity
             android:name=".Menu"

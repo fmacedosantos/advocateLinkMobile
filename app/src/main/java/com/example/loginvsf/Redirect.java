@@ -16,7 +16,7 @@ public class Redirect extends AppCompatActivity {
     ViewPager viewPager;
     ArrayList<Integer> arrayList = new ArrayList<>();
     ImageView back,next;
-    Button btCadastrar, btEntrar;
+    Button btUsuario, btAdvogado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,8 @@ public class Redirect extends AppCompatActivity {
         back = findViewById(R.id.backButton);
         next = findViewById(R.id.nextButton);
 
-        btCadastrar = findViewById(R.id.btCadastrar);
-        btEntrar = findViewById(R.id.btEntrar);
+        btUsuario = findViewById(R.id.btCadastrar);
+        btAdvogado = findViewById(R.id.btEntrar);
 
         arrayList.add(R.drawable.img1);
         arrayList.add(R.drawable.img2);
@@ -39,18 +39,18 @@ public class Redirect extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter(Redirect.this,arrayList);
         viewPager.setAdapter(myAdapter);
 
-        btCadastrar.setOnClickListener(new View.OnClickListener() {
+        btUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(Redirect.this, Cadastro.class); //tela de cadastro
+                Intent it = new Intent(Redirect.this, Login.class); //tela de login do usuario
                 startActivity(it);
             }
         });
 
-        btEntrar.setOnClickListener(new View.OnClickListener() {
+        btAdvogado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(Redirect.this, Login.class); //tela de login
+                Intent it = new Intent(Redirect.this, LoginAdvogado.class); //tela de login
                 startActivity(it);
             }
         });

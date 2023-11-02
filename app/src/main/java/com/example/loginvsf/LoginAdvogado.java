@@ -3,6 +3,7 @@ package com.example.loginvsf;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,12 +11,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.loginvsf.Cadastro;
-import com.example.loginvsf.Menu;
-import com.example.loginvsf.R;
 import com.example.loginvsf.databinding.ActivityLoginBinding;
 
-public class Login extends AppCompatActivity {
+public class LoginAdvogado extends AppCompatActivity {
     private ActivityLoginBinding binding;
 
     @Override
@@ -31,8 +29,10 @@ public class Login extends AppCompatActivity {
         tvCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Cria um Intent para abrir a Activity Cadastrar
-                Intent intent = new Intent(getApplicationContext(), Cadastro.class);
+                // Cria um Intent para abrir um site na web
+                String url = "http://www.example.com"; // Substitua pela URL que você quer abrir
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
                 startActivity(intent);
             }
         });
