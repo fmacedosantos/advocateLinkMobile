@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
 
         if (email.equals(savedEmail) && senha.equals(savedSenha)) {
             // Se o email e a senha estiverem corretos, redirecione para a próxima tela
-            startActivity(new Intent(this, Redirect.class));
+            startActivity(new Intent(this, Menu.class));
         } else {
             // Se o email ou a senha estiverem incorretos, exiba uma mensagem de erro
             Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show();
