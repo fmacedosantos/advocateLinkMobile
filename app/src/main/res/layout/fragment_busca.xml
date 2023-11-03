@@ -1,15 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:scrollbars="horizontal"
     tools:context=".fragments.BuscaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="busca funcionado" />
+        android:layout_height="200dp"
+        android:scrollbarSize="0dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="355dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="10dp">
+
+            <EditText
+                android:id="@+id/search_text"
+                android:layout_width="355dp"
+                android:layout_height="40dp"
+                android:background="#D9D9D9"
+                android:drawableRight="@drawable/ic_search"
+                android:ems="10"
+                android:inputType="text"
+                android:textColorHint="#FFFFFF" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/kurale"
+            android:text="POR ÁREA" />
+
+        <HorizontalScrollView
+            android:layout_width="387dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="130dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/civil_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/civilsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/imposto_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/impostsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/trabalhista_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/trabsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/criminal_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/criminalsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/eleitoral_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/eleitoralsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/criminal_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/criminalsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
