@@ -112,15 +112,71 @@
                     tools:layout_editor_absoluteY="223dp" />
 
                 <ImageButton
-                    android:id="@+id/criminal_search"
+                    android:id="@+id/penal_search"
                     android:layout_width="65dp"
                     android:layout_height="60dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
-                    android:src="@drawable/criminalsearch"
+                    android:src="@drawable/penalsearch"
                     tools:layout_editor_absoluteX="33dp"
                     tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/ambiental_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ambientalsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/digital_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/digitalsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/empresarial_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/empresarialsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/saude_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/saudesearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
+                <ImageButton
+                    android:id="@+id/propIntelec_search"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#005A5555"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/propintelecsearch"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="223dp" />
+
 
             </LinearLayout>
 
