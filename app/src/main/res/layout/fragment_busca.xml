@@ -9,13 +9,16 @@
     tools:context=".fragments.BuscaFragment">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="412dp"
+        android:layout_height="217dp"
         android:scrollbarSize="0dp"
         app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.003">
 
         <androidx.cardview.widget.CardView
             android:layout_width="355dp"
@@ -46,7 +49,7 @@
 
         <HorizontalScrollView
             android:layout_width="387dp"
-            android:layout_height="60dp"
+            android:layout_height="77dp"
             android:layout_marginStart="11dp"
             android:layout_marginTop="130dp"
             android:scrollbars="none">
@@ -58,8 +61,8 @@
 
                 <ImageButton
                     android:id="@+id/civil_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -69,8 +72,8 @@
 
                 <ImageButton
                     android:id="@+id/imposto_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -80,8 +83,8 @@
 
                 <ImageButton
                     android:id="@+id/trabalhista_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -91,8 +94,8 @@
 
                 <ImageButton
                     android:id="@+id/criminal_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -102,8 +105,8 @@
 
                 <ImageButton
                     android:id="@+id/eleitoral_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -113,8 +116,8 @@
 
                 <ImageButton
                     android:id="@+id/penal_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -124,8 +127,8 @@
 
                 <ImageButton
                     android:id="@+id/ambiental_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -135,8 +138,8 @@
 
                 <ImageButton
                     android:id="@+id/digital_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -146,8 +149,8 @@
 
                 <ImageButton
                     android:id="@+id/empresarial_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -157,8 +160,8 @@
 
                 <ImageButton
                     android:id="@+id/saude_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
@@ -168,8 +171,8 @@
 
                 <ImageButton
                     android:id="@+id/propIntelec_search"
-                    android:layout_width="65dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     android:background="#005A5555"
                     android:scaleType="fitXY"
