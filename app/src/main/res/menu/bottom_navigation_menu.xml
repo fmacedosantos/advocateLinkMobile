@@ -5,17 +5,16 @@
     <item
         android:id="@+id/menu_home"
         android:icon="@drawable/ic_home"
-        android:title="@string/menu_home"
-        />
+        android:title="Início"/>
 
     <item
         android:id="@+id/menu_pesquisa"
         android:icon="@drawable/ic_search"
-        android:title="Pequisa" />
+        android:title="Pequisa"/>
 
     <item
         android:id="@+id/menu_user"
         android:icon="@drawable/ic_user"
-        android:title="@string/menu_user" />
+        android:title="@string/menu_user"/>
 
 </menu>
