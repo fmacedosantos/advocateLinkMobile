@@ -27,6 +27,8 @@
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="@+id/emailLogin"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,6 +44,8 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

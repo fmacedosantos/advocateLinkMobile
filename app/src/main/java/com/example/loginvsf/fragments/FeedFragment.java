@@ -2,13 +2,21 @@ package com.example.loginvsf.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.loginvsf.Feed;
 import com.example.loginvsf.R;
+import com.example.loginvsf.RecyclerAdapter;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +33,12 @@ public class FeedFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ArrayList<Feed> feedArrayList;
+    private String[] feedTitle;
+    private int[] imageResourse;
+    private String[] feedMensagem;
+    private int[] imagePost;
+    private RecyclerView recyclerview;
 
     public FeedFragment() {
         // Required empty public constructor
@@ -63,4 +77,80 @@ public class FeedFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_feed, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        dataInitialize();
+
+        recyclerview = view.findViewById(R.id.recyclerView);
+        recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerview.setHasFixedSize(true);
+        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(getContext(),feedArrayList);
+        recyclerview.setAdapter(recyclerAdapter);
+        recyclerAdapter.notifyDataSetChanged();
+    }
+
+    private void dataInitialize() {
+        feedArrayList = new ArrayList<>();
+
+        feedTitle = new String[]{
+                getString(R.string.head_1),
+                getString(R.string.head_1),
+                getString(R.string.head_1),
+                getString(R.string.head_1),
+                getString(R.string.head_1),
+                getString(R.string.head_1),
+                getString(R.string.head_1),
+                getString(R.string.head_1),
+                getString(R.string.head_2),
+                getString(R.string.head_2),
+                getString(R.string.head_2),
+                getString(R.string.head_2),
+                getString(R.string.head_2),
+                getString(R.string.head_2),
+        };
+        imageResourse = new int[]{
+                R.drawable.advogado_teste_feed,
+                R.drawable.advogado_teste_feed,
+                R.drawable.advogado_teste_feed,
+                R.drawable.advogado_teste_feed,
+                R.drawable.advogado_teste_feed,
+                R.drawable.advogado_teste_feed,
+                R.drawable.advogado_teste_feed,
+                R.drawable.advogado_teste_feed,
+                R.drawable.logo2,
+                R.drawable.logo2,
+                R.drawable.logo2,
+                R.drawable.logo2,
+                R.drawable.logo2,
+                R.drawable.logo2,
+        };
+        /*feedMensagem = new String[]{
+                getString(R.string.mensagem1),
+                getString(R.string.mensagem1),
+                getString(R.string.mensagem1),
+                getString(R.string.mensagem1),
+                getString(R.string.mensagem1),
+                getString(R.string.mensagem1),
+                getString(R.string.mensagem1),
+                getString(R.string.mensagem1),
+        };
+        imagePost = new int[]{
+              R.drawable.advogado_teste_feed,
+              R.drawable.advogado_teste_feed,
+              R.drawable.advogado_teste_feed,
+              R.drawable.advogado_teste_feed,
+              R.drawable.advogado_teste_feed,
+              R.drawable.advogado_teste_feed,
+              R.drawable.advogado_teste_feed,
+              R.drawable.advogado_teste_feed,
+        };*/
+
+        for (int i = 0; i < feedTitle.length; i++){
+            Feed feed = new Feed(feedTitle[i],imageResourse[i]);
+            feedArrayList.add(feed);
+        }
+    }
+
 }

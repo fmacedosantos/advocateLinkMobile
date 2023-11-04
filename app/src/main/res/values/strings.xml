@@ -7,6 +7,7 @@
 
     <string name="preference_file_key">com.example.loginvsf.com.example.myapp.PREFERENCE_FILE_KEY</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="head_1">Projeto com o objetivo de solucionar o problema existente na conexão entre Advogado e Cliente. A AvocateLink busca facilitar a procura por advogados e a comunicação entre as partes.</string>
+    <string name="head_2">Projeto com o objetivo de solucionar o problema existente na conexão entre Advogado e Cliente. A AvocateLink busca facilitar a procura por advogados e a comunicação entre as partes.</string>
 
 </resources>
