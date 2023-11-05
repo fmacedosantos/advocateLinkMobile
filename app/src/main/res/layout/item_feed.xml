@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/advogado_teste_feed"
+        android:src="@drawable/logo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/Base.CardView" />
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="408dp"
-        android:src="@drawable/advogado_teste_feed"
+        android:src="@drawable/logo2"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/textMMensage"
         app:layout_constraintHorizontal_bias="0.0"

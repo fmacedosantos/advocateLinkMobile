@@ -9,49 +9,33 @@
     tools:context=".fragments.BuscaFragment">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="412dp"
-        android:layout_height="217dp"
+        android:id="@+id/cardView"
+        android:layout_width="411dp"
+        android:layout_height="110dp"
         android:scrollbarSize="0dp"
-        app:cardElevation="10dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003">
+        app:layout_constraintVertical_bias="0.154">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="355dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="25dp"
-            app:cardCornerRadius="10dp">
-
-            <EditText
-                android:id="@+id/search_text"
-                android:layout_width="355dp"
-                android:layout_height="40dp"
-                android:background="#D9D9D9"
-                android:drawableRight="@drawable/ic_search"
-                android:ems="10"
-                android:inputType="text"
-                android:textColorHint="#FFFFFF" />
-        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="1dp"
             android:fontFamily="@font/kurale"
             android:text="POR ÁREA" />
 
         <HorizontalScrollView
-            android:layout_width="387dp"
+            android:layout_width="409dp"
             android:layout_height="77dp"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="35dp"
             android:scrollbars="none">
 
             <LinearLayout
@@ -185,6 +169,27 @@
 
 
         </HorizontalScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="355dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="355dp"
+            android:layout_height="40dp"
+            android:background="#D9D9D9"
+            android:drawableRight="@drawable/ic_search"
+            android:ems="10"
+            android:inputType="text"
+            android:textColorHint="#FFFFFF" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
