@@ -29,6 +29,8 @@ import java.io.IOException;
 
 public class PerfilFragment extends Fragment {
 
+    private static final String KEY_IMAGEM = "";
+    private static final String KEY_IMAGEM_BANNER = "";
     ImageView imgCamera;
     ImageView imgCameraBanner;
     ActivityResultLauncher<Intent> cameraLauncher;
@@ -128,4 +130,37 @@ public class PerfilFragment extends Fragment {
 
         return view;
     }
+
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Salvar o estado da imagem no Bundle
+        outState.putParcelable(KEY_IMAGEM, perfilBitmap);
+        outState.putParcelable(KEY_IMAGEM_BANNER, bannerBitmap);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        // Inicializar seus componentes, incluindo o ImageView
+        imgCamera = view.findViewById(R.id.imgCamera);
+        imgCameraBanner = view.findViewById(R.id.imgCameraBanner);
+
+        // Verificar se há um estado salvo (quando a tela é recriada)
+        if (savedInstanceState != null) {
+            // Restaurar a imagem a partir do estado salvo
+            perfilBitmap = savedInstanceState.getParcelable(KEY_IMAGEM);
+            if (perfilBitmap != null) {
+                imgCamera.setImageBitmap(perfilBitmap);
+            }
+        }// Verificar se há um estado salvo (quando a tela é recriada)
+        if (savedInstanceState != null) {
+            // Restaurar a imagem a partir do estado salvo
+            bannerBitmap = savedInstanceState.getParcelable(KEY_IMAGEM_BANNER);
+            if (bannerBitmap != null) {
+                imgCameraBanner.setImageBitmap(bannerBitmap);
+            }
+        }
+
+    }
+
 }

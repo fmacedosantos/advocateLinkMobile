@@ -7,7 +7,22 @@
 
     <string name="preference_file_key">com.example.loginvsf.com.example.myapp.PREFERENCE_FILE_KEY</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="head_1">Projeto com o objetivo de solucionar o problema existente na conexão entre Advogado e Cliente. A AvocateLink busca facilitar a procura por advogados e a comunicação entre as partes.</string>
-    <string name="head_2">Projeto com o objetivo de solucionar o problema existente na conexão entre Advogado e Cliente. A AvocateLink busca facilitar a procura por advogados e a comunicação entre as partes.</string>
+    <string name="head_1">Está com dúvidas sobre seus direitos como consumidor? Conte comigo para orientações jurídicas precisas e defesa dos seus interesses. #DireitosDoConsumidor #Advogado</string>
+    <string name="head_2">Preocupado com questões legais? Estou aqui para ajudar a encontrar soluções jurídicas para seus problemas. Entre em contato para uma consulta. #AssessoriaJurídica #Advogado</string>
+    <string name="head_3">Em busca de orientação legal? Me coloco à disposição para oferecer suporte jurídico personalizado. #ConsultoriaJurídica #Advocacia</string>
+    <string name="head_4">Os direitos trabalhistas são fundamentais. Se você enfrenta questões no seu emprego, estou pronto para ajudar na busca por justiça. #DireitosTrabalhistas #Advogado</string>
+    <string name="head_5">Problemas de família? Conte com meu apoio para questões como divórcio, guarda dos filhos e pensão alimentícia. #DireitoDeFamília #AssistênciaJurídica</string>
+    <string name="head_6">Defenda seu negócio com segurança. Ofereço consultoria jurídica empresarial para resguardar seus interesses comerciais. #DireitoEmpresarial #Advogado</string>
+    <string name="head_7">Conheça seus direitos como inquilino. Se precisa de auxílio em questões locatícias, estou pronto para ajudar. #DireitoImobiliário #AssessoriaJurídica</string>
+    <string name="head_8">Cada caso é único. Ofereço atendimento jurídico personalizado para resolver suas questões legais de forma eficaz. #AssistênciaLegal #Advocacia</string>
+    <string name="head_9">Não permita abusos no ambiente de trabalho. Conte com minha assessoria para garantir um ambiente profissional justo e equilibrado. #AmbienteDeTrabalho #Direitos</string>
+    <string name="head_10">A herança é um tema delicado. Se precisa de orientação sobre questões de sucessão, estou à disposição para ajudar. #DireitoSucessório #Advogado</string>
+    <string name="head_11">Em tempos de mudanças, é essencial conhecer seus direitos imigratórios. Estou aqui para auxiliar nesse processo. #Imigração #AssessoriaJurídica</string>
+    <string name="head_12">A Lei Geral de Proteção de Dados (LGPD) é essencial para a segurança de informações. Posso orientar sobre conformidade e proteção de dados. #LGPD #Privacidade</string>
+    <string name="head_13">Se envolveu em um acidente? Conheça seus direitos e busque a reparação adequada. Estou aqui para auxiliar nesse processo. #Acidentes #AssistênciaJurídica</string>
+    <string name="head_14">Questões criminais exigem atenção especial. Conte com minha experiência para sua defesa legal. #DireitoCriminal #Advogado</string>
+    <string name="head_15">A mediação é uma alternativa viável para resolver conflitos sem litígios. Posso ajudar a encontrar soluções através desse método. #Mediação #Advocacia</string>
+
+
 
 </resources>
