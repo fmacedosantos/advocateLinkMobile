@@ -2,6 +2,8 @@ package com.example.loginvsf.fragments;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -19,27 +21,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.loginvsf.R;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class PerfilFragment extends Fragment {
 
-    private static final String KEY_IMAGEM = "";
-    private static final String KEY_IMAGEM_BANNER = "";
+    private static final String KEY_IMAGEM = "imagem";
+    private static final String KEY_IMAGEM_BANNER = "imagem_banner";
     ImageView imgCamera;
     ImageView imgCameraBanner;
     ActivityResultLauncher<Intent> cameraLauncher;
     ActivityResultLauncher<Intent> cameraLauncherBanner;
+    ActivityResultLauncher<Intent> galleryLauncher;
+    ActivityResultLauncher<Intent> galleryLauncherBanner;
 
     Bitmap perfilBitmap;
     Bitmap bannerBitmap;
-
-    // OPERANDO
 
     @SuppressLint("MissingInflatedId")
     @Nullable
@@ -86,14 +88,53 @@ public class PerfilFragment extends Fragment {
 
                             // Atualiza a variável bannerBitmap com a imagem redimensionada
                             bannerBitmap = resizedBitmap;
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
                 });
 
+        galleryLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == requireActivity().RESULT_OK) {
+                        Uri selectedImageUri = result.getData().getData();
+                        try {
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), selectedImageUri);
+                            imgCamera.setImageBitmap(bitmap);
+                            perfilBitmap = bitmap;
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+        galleryLauncherBanner = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == requireActivity().RESULT_OK) {
+                        Uri selectedImageUri = result.getData().getData();
+                        try {
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), selectedImageUri);
+
+                            // Redimensiona a imagem para o formato retangular
+                            int width = bitmap.getWidth();
+                            int height = width / 2;
+                            Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, width, height, true);
+
+                            // Salva a imagem redimensionada em um arquivo
+                            File file = new File(requireContext().getExternalFilesDir(null), "rectangle_image.jpg");
+                            saveBitmapToFile(resizedBitmap, file);
+
+                            // Carrega a imagem redimensionada na ImageView retangular
+                            imgCameraBanner.setImageBitmap(resizedBitmap);
+                            imgCameraBanner.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+                            // Atualiza a variável bannerBitmap com a imagem redimensionada
+                            bannerBitmap = resizedBitmap;
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
 
         // Request for camera runtime permission
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
@@ -106,16 +147,14 @@ public class PerfilFragment extends Fragment {
         imgCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                cameraLauncher.launch(intent);
+                showImagePickerDialog(galleryLauncher);
             }
         });
 
         imgCameraBanner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                cameraLauncherBanner.launch(intent);
+                showImagePickerDialog(galleryLauncherBanner);
             }
         });
 
@@ -129,6 +168,38 @@ public class PerfilFragment extends Fragment {
         }
 
         return view;
+    }
+
+    private void showImagePickerDialog(ActivityResultLauncher<Intent> launcher) {
+        final CharSequence[] options = {"Tirar Foto", "Escolher da Galeria", "Cancelar"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Escolha uma opção");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                if (options[item].equals("Tirar Foto")) {
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    try {
+                        launcher.launch(intent);
+                    } catch (ActivityNotFoundException e) {
+                        // Handle the exception appropriately
+                        e.printStackTrace();
+                    }
+                } else if (options[item].equals("Escolher da Galeria")) {
+                    Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    try {
+                        launcher.launch(intent);
+                    } catch (ActivityNotFoundException e) {
+                        // Handle the exception appropriately
+                        e.printStackTrace();
+                    }
+                } else if (options[item].equals("Cancelar")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
     }
 
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -152,15 +223,21 @@ public class PerfilFragment extends Fragment {
             if (perfilBitmap != null) {
                 imgCamera.setImageBitmap(perfilBitmap);
             }
-        }// Verificar se há um estado salvo (quando a tela é recriada)
-        if (savedInstanceState != null) {
-            // Restaurar a imagem a partir do estado salvo
+
+            // Restaurar a imagem do banner a partir do estado salvo
             bannerBitmap = savedInstanceState.getParcelable(KEY_IMAGEM_BANNER);
             if (bannerBitmap != null) {
                 imgCameraBanner.setImageBitmap(bannerBitmap);
             }
         }
-
     }
 
+    private void saveBitmapToFile(Bitmap bitmap, File file) {
+        try (FileOutputStream out = new FileOutputStream(file)) {
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

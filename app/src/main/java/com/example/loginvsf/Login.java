@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,12 +18,15 @@ import com.example.loginvsf.databinding.ActivityLoginBinding;
 
 public class Login extends AppCompatActivity {
     private ActivityLoginBinding binding;
+    private CheckBox checkBoxLembrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        checkBoxLembrar = findViewById(R.id.checkBoxLembrar);
 
         binding.btnLogin.setOnClickListener(view -> login());
 
@@ -36,6 +40,14 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Recupera as preferências salvas e preenche os campos se a opção "Lembrar senha" estiver marcada
+        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
+        checkBoxLembrar.setChecked(preferences.getBoolean("lembrarSenha", false));
+        if (checkBoxLembrar.isChecked()) {
+            binding.emailLogin.setText(preferences.getString("email", ""));
+            binding.senhaLogin.setText(preferences.getString("senha", ""));
+        }
     }
 
     private void login() {
@@ -46,6 +58,22 @@ public class Login extends AppCompatActivity {
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         String savedEmail = sharedPref.getString("Email", "");
         String savedSenha = sharedPref.getString("Senha", "");
+
+        // Salva os dados se a opção "Lembrar senha" estiver marcada
+        if (checkBoxLembrar.isChecked()) {
+            SharedPreferences.Editor editor = getPreferences(Context.MODE_PRIVATE).edit();
+            editor.putString("email", email);
+            editor.putString("senha", senha);
+            editor.putBoolean("lembrarSenha", true);
+            editor.apply();
+        } else {
+            // Se a opção não estiver marcada, limpa os dados salvos
+            SharedPreferences.Editor editor = getPreferences(Context.MODE_PRIVATE).edit();
+            editor.remove("email");
+            editor.remove("senha");
+            editor.putBoolean("lembrarSenha", false);
+            editor.apply();
+        }
 
         if (email.equals(savedEmail) && senha.equals(savedSenha)) {
             // Se o email e a senha estiverem corretos, redirecione para a próxima tela
